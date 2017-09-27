@@ -1,6 +1,7 @@
 package ru.xegex.risks.libs.utils;
 
 import org.joda.time.DateTime;
+import org.joda.time.Days;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -16,7 +17,8 @@ public abstract class DateTimeUtils {
         String dateTimeStr = String.valueOf(as400dt).split("\\.")[0];
         int len = dateTimeStr.length();
 
-        if (len == 7 && dateTimeStr.substring(0,1).equals("1")){
+        if (dateTimeStr.equals("9999999")) return LocalDateTime.parse("2999-12-30");
+        else if (len == 7 && dateTimeStr.substring(0,1).equals("1")){
             return in6DFormat(dateTimeStr.substring(1,7));
         }
         else if (len == 7){
@@ -41,6 +43,10 @@ public abstract class DateTimeUtils {
             return Double.parseDouble(to6DFormat(localDateTime));
         }
         else throw new ConvertionEx("Doesn't plan to implement centuries other than 20 and 21");
+    }
+
+    public static int differenceInDays(LocalDateTime start, LocalDateTime end){
+        return Days.daysBetween(start.toLocalDate(), end.toLocalDate()).getDays();
     }
 
     private static LocalDateTime in6DFormat(String dateTimeStr){
