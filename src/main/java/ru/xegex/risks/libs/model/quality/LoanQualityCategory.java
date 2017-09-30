@@ -1,4 +1,4 @@
-package ru.xegex.risks.libs.model.loan;
+package ru.xegex.risks.libs.model.quality;
 
 /**
  * Created by rb052775 on 27.09.2017.
