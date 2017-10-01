@@ -1,8 +1,5 @@
 package ru.xegex.risks.libs.model.quality;
 
-import ru.xegex.risks.libs.model.customer.FinState;
-import ru.xegex.risks.libs.model.loan.LoanServCoeff;
-
 /**
  * Created by rb052775 on 30.09.2017.
  */
