@@ -17,7 +17,7 @@ public abstract class DateTimeUtils {
         String dateTimeStr = String.valueOf(as400dt).split("\\.")[0];
         int len = dateTimeStr.length();
 
-        if (dateTimeStr.equals("9999999")) return LocalDateTime.parse("2999-12-30");
+        if (dateTimeStr.equals("9999999")) return new LocalDateTime(Integer.MAX_VALUE);
         else if (len == 7 && dateTimeStr.substring(0,1).equals("1")){
             return in6DFormat(dateTimeStr.substring(1,7));
         }
