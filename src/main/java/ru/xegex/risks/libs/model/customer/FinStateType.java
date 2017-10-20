@@ -7,5 +7,5 @@ public enum FinStateType {
     //01 - хорошо, 02 - среднее, 03-05 - плохое
     GOOD,
     MIDDLE,
-    UNSATISFACTORY;
+    UNSATISFACTORY
 }
